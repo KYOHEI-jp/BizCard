@@ -22,12 +22,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    CreateBizCard()
                 }
             }
         }
     }
 }
+
+@Composable
+fun CreateBizCard() {
+    Text(text = "BizCard")
+}
+
 
 @Composable
 fun Greeting(name: String) {
@@ -38,6 +44,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     BizCardTheme {
-        Greeting("Android")
+        CreateBizCard()
     }
 }
