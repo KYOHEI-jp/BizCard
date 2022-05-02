@@ -45,7 +45,8 @@ fun CreateBizCard() {
         Card(
             modifier = Modifier
                 .width(200.dp)
-                .height(390.dp),
+                .height(390.dp)
+                .padding(12.dp),
             elevation = 4.dp,
             shape = RoundedCornerShape(corner = CornerSize(15.dp)),
             backgroundColor = Green
