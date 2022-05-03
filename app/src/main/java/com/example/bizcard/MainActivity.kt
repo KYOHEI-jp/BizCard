@@ -11,10 +11,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -64,6 +61,7 @@ fun CreateBizCard() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 CreateImageProfile()
+                Divider()
             }
         }
 
@@ -71,7 +69,7 @@ fun CreateBizCard() {
 }
 
 @Composable
-private fun CreateImageProfile() {
+private fun CreateImageProfile(modifier: Modifier = Modifier) {
     Surface(
         modifier = Modifier
             .size(150.dp)
