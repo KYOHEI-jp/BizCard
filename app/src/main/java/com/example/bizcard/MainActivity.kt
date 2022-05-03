@@ -14,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.Green
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.bizcard.ui.theme.BizCardTheme
@@ -49,7 +50,7 @@ fun CreateBizCard() {
                 .padding(12.dp),
             elevation = 4.dp,
             shape = RoundedCornerShape(corner = CornerSize(15.dp)),
-            backgroundColor = Green
+            backgroundColor = White
         ) {
 
         }
