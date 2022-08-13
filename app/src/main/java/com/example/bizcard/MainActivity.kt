@@ -1,8 +1,7 @@
 package com.example.bizcard
 
-import android.graphics.Color
-import android.media.Image
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
@@ -15,9 +14,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.graphics.Color.Companion.LightGray
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,10 +60,42 @@ fun CreateBizCard() {
                 CreateImageProfile()
                 Divider()
                 CreateInfo()
+                Button(onClick = {
+                    Log.d("Clicked", "CreateBizCard, Clicked")
+                }) {
+                    Text("ポートフォリオ", style = MaterialTheme.typography.button)
+                }
             }
         }
 
     }
+}
+
+@Preview
+@Composable
+fun Content() {
+    Box(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .padding(5.dp)
+    ) {
+        Surface(
+            modifier = Modifier
+                .padding(3.dp)
+                .fillMaxWidth()
+                .fillMaxHeight(),
+            shape = RoundedCornerShape(corner = CornerSize(6.dp)),
+            border = BorderStroke(width = 2.dp, color = LightGray)
+        ) {
+            Portfolio(data = listOf("Project 1", "Project 2", "Project 3") )
+        }
+    }
+}
+
+@Composable
+fun Portfolio(data: List<String>) {
+    Text("プロジェクトはここ！")
 }
 
 @Composable
@@ -115,7 +144,7 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+// @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     BizCardTheme {
