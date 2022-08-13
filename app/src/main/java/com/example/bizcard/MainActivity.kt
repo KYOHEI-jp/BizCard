@@ -62,8 +62,6 @@ fun CreateBizCard() {
             ) {
                 CreateImageProfile()
                 Divider(
-                    thickness = 12.dp,
-                    startIndent = 123.dp
                 )
             }
         }
