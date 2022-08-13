@@ -61,7 +61,10 @@ fun CreateBizCard() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 CreateImageProfile()
-                Divider()
+                Divider(
+                    thickness = 12.dp,
+                    startIndent = 123.dp
+                )
             }
         }
 
