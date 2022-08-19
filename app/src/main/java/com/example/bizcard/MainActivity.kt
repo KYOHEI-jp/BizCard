@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -19,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.LightGray
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -86,7 +88,6 @@ fun CreateBizCard() {
     }
 }
 
-@Preview
 @Composable
 fun Content() {
     Box(
@@ -119,11 +120,25 @@ fun Portfolio(data: List<String>) {
     // リサイクラービューのようなもの。縦方向にスクロールするリストを作成する
     LazyColumn {
         items(data) { item ->
-
-            
+            Card(
+                modifier = Modifier
+                    .padding(13.dp)
+                    .fillMaxWidth(),
+                shape = RectangleShape
+            ) {
+                Row(
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .background(MaterialTheme.colors.surface)
+                        .padding(16.dp)
+                ) {
+                    CreateImageProfile()
+                }
+            }
         }
     }
 }
+
 
 @Composable
 private fun CreateInfo() {
