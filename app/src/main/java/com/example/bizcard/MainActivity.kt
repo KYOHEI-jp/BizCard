@@ -8,6 +8,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -89,7 +90,7 @@ fun Content() {
             shape = RoundedCornerShape(corner = CornerSize(6.dp)),
             border = BorderStroke(width = 2.dp, color = LightGray)
         ) {
-            Portfolio(data = listOf("Project 1", "Project 2", "Project 3") )
+            Portfolio(data = listOf("Project 1", "Project 2", "Project 3"))
         }
     }
 }
@@ -97,7 +98,11 @@ fun Content() {
 @Composable
 fun Portfolio(data: List<String>) {
     Text("プロジェクトはここ！")
-    LazyColumn(content = )
+    LazyColumn {
+        items(data) { item ->
+            Text(item)
+        }
+    }
 }
 
 @Composable
