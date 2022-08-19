@@ -132,7 +132,8 @@ fun Portfolio(data: List<String>) {
                         .background(MaterialTheme.colors.surface)
                         .padding(16.dp)
                 ) {
-                    CreateImageProfile()
+                    // 23-4:17
+                    CreateImageProfile(modifier = Modifier.size(100.dp))
                 }
             }
         }
@@ -161,7 +162,7 @@ private fun CreateInfo() {
 @Composable
 private fun CreateImageProfile(modifier: Modifier = Modifier) {
     Surface(
-        modifier = Modifier
+        modifier = modifier
             .size(150.dp)
             .padding(5.dp),
         shape = CircleShape,
@@ -173,7 +174,7 @@ private fun CreateImageProfile(modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.profile_image),
             contentDescription = "profile image",
-            modifier = Modifier.size(135.dp),
+            modifier = modifier.size(135.dp),
             contentScale = ContentScale.Crop
         )
     }
