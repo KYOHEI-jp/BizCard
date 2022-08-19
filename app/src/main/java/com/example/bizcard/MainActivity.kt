@@ -119,7 +119,8 @@ fun Portfolio(data: List<String>) {
     // リサイクラービューのようなもの。縦方向にスクロールするリストを作成する
     LazyColumn {
         items(data) { item ->
-            Text(item)
+
+            
         }
     }
 }
