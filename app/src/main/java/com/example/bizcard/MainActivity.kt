@@ -8,11 +8,14 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color.Companion.LightGray
@@ -41,6 +44,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CreateBizCard() {
+    val buttonClickState = remember {
+        mutableStateOf(false)
+    }
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -62,9 +68,17 @@ fun CreateBizCard() {
                 Divider()
                 CreateInfo()
                 Button(onClick = {
-                    Log.d("Clicked", "CreateBizCard, Clicked")
+                    buttonClickState.value = !buttonClickState.value
+
                 }) {
                     Text("ポートフォリオ", style = MaterialTheme.typography.button)
+                }
+                if (buttonClickState.value) {
+                    Content()
+                } else {
+                    Box() {
+
+                    }
                 }
             }
         }
@@ -89,15 +103,25 @@ fun Content() {
             shape = RoundedCornerShape(corner = CornerSize(6.dp)),
             border = BorderStroke(width = 2.dp, color = LightGray)
         ) {
-            Portfolio(data = listOf("Project 1", "Project 2", "Project 3") )
+            Portfolio(
+                data = listOf(
+                    "Project 1", "Project 2", "Project 3",
+                    "Project 3",
+                    "Project 3",
+                )
+            )
         }
     }
 }
 
 @Composable
 fun Portfolio(data: List<String>) {
-    Text("プロジェクトはここ！")
-    LazyColumn(content = )
+    // リサイクラービューのようなもの。縦方向にスクロールするリストを作成する
+    LazyColumn {
+        items(data) { item ->
+            Text(item)
+        }
+    }
 }
 
 @Composable
@@ -108,13 +132,11 @@ private fun CreateInfo() {
         Text(
             text = "KYOHEI WATANABE",
             style = MaterialTheme.typography.h4,
-            color = MaterialTheme.colors.primaryVariant
         )
         Text(text = "Android Developer", modifier = Modifier.padding(3.dp))
         Text(
             text = "kingdomhearts510@gmail.com",
             modifier = Modifier.padding(3.dp),
-            color = MaterialTheme.colors.primaryVariant,
             style = MaterialTheme.typography.subtitle1
         )
     }
