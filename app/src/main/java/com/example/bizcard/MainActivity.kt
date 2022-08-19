@@ -63,7 +63,7 @@ fun CreateBizCard() {
                 Divider()
                 CreateInfo()
                 Button(onClick = {
-                    Log.d("Clicked", "CreateBizCard, Clicked")
+                    
                 }) {
                     Text("ポートフォリオ", style = MaterialTheme.typography.button)
                 }
@@ -90,7 +90,13 @@ fun Content() {
             shape = RoundedCornerShape(corner = CornerSize(6.dp)),
             border = BorderStroke(width = 2.dp, color = LightGray)
         ) {
-            Portfolio(data = listOf("Project 1", "Project 2", "Project 3"))
+            Portfolio(
+                data = listOf(
+                    "Project 1", "Project 2", "Project 3",
+                    "Project 3",
+                    "Project 3",
+                )
+            )
         }
     }
 }
