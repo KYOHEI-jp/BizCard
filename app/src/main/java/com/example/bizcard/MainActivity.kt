@@ -132,13 +132,11 @@ private fun CreateInfo() {
         Text(
             text = "KYOHEI WATANABE",
             style = MaterialTheme.typography.h4,
-            color = MaterialTheme.colors.primaryVariant
         )
         Text(text = "Android Developer", modifier = Modifier.padding(3.dp))
         Text(
             text = "kingdomhearts510@gmail.com",
             modifier = Modifier.padding(3.dp),
-            color = MaterialTheme.colors.primaryVariant,
             style = MaterialTheme.typography.subtitle1
         )
     }
