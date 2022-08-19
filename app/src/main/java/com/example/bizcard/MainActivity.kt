@@ -120,7 +120,7 @@ fun Portfolio(data: List<String>) {
     LazyColumn {
         items(data) { item ->
 
-            
+
         }
     }
 }
