@@ -106,9 +106,9 @@ fun Content() {
         ) {
             Portfolio(
                 data = listOf(
-                    "Project 1", "Project 2", "Project 3",
-                    "Project 3",
-                    "Project 3",
+                    "MrMax", "ココカラファイン", "CLiP",
+                    "FJG",
+                    "EVERY",
                 )
             )
         }
@@ -124,16 +124,18 @@ fun Portfolio(data: List<String>) {
                 modifier = Modifier
                     .padding(13.dp)
                     .fillMaxWidth(),
-                shape = RectangleShape
+                shape = RectangleShape,
+                elevation = 4.dp
             ) {
                 Row(
                     modifier = Modifier
                         .padding(8.dp)
                         .background(MaterialTheme.colors.surface)
-                        .padding(16.dp)
+                        .padding(7.dp)
                 ) {
                     // 23-4:17
                     CreateImageProfile(modifier = Modifier.size(100.dp))
+                    Text(text = item)
                 }
             }
         }
