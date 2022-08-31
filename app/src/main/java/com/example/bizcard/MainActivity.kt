@@ -23,8 +23,10 @@ import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.bizcard.ui.theme.BizCardTheme
 
 class MainActivity : ComponentActivity() {
@@ -135,7 +137,15 @@ fun Portfolio(data: List<String>) {
                 ) {
                     // 23-4:17
                     CreateImageProfile(modifier = Modifier.size(100.dp))
-                    Text(text = item)
+                    Column(
+                        modifier = Modifier
+                            .padding(7.dp)
+                            .align(alignment = Alignment.CenterVertically)
+                    ) {
+
+                        Text(text = item, fontWeight = FontWeight.Bold)
+                        Text(text = "A GreatProject", style = MaterialTheme.typography.body2)
+                    }
                 }
             }
         }
